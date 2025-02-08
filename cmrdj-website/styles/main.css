@@ -11,10 +11,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-                url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1') no-repeat center center fixed;
-    background-size: cover;
     color: var(--text-color);
+    /* Remove the background gradient and image */
 }
 
 header {
@@ -23,7 +21,7 @@ header {
 }
 
 .language-switcher {
-    position: fixed;
+    position: absolute; /* Change from fixed to absolute */
     top: 1rem;
     right: 2rem;
     display: flex;
@@ -75,13 +73,26 @@ header {
 }
 
 .hero {
-    text-align: center;
     padding: 20px 0;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-                url('../images/medical-facility.jpeg') no-repeat center center;
-    background-size: cover;
+    background: none;  /* Remove all background */
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.medical-facility-image {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info {
@@ -378,6 +389,8 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin-left: 2rem; /* Instead of absolute positioning */
+    width: 50%;
+    margin: 0;
 }
 
 /* Ensure proper spacing in mobile view */
@@ -385,6 +398,8 @@ footer {
     .doctor-info-card {
         margin: 20px auto; /* Center card on mobile */
         max-width: calc(100% - 2rem); /* Full width minus margins */
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
@@ -410,6 +425,7 @@ footer {
     line-height: 1.6;
     padding-left: 1.5rem;
     position: relative;
+    white-space: pre-line; /* Preserve line breaks from JSON */
 }
 
 .doctor-info p::before {
@@ -432,6 +448,24 @@ footer {
 .rtl .doctor-info p::before {
     right: 0;
     left: auto;
+}
+
+.rtl .hero-content {
+    flex-direction: row-reverse;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .medical-facility-image,
+    .doctor-info-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 nav {

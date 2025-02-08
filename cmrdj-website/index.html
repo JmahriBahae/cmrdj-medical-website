@@ -6,6 +6,10 @@
     <title data-translate="title">CMRD JMAHRI</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="scripts/language-switcher.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script defer src="scripts/map-utils.js"></script>
 </head>
 <body>
     <header class="main-header">
@@ -32,14 +36,15 @@
             <div class="doctor-info-card">
                 <div class="doctor-info">
                     <h3>
-                        <span data-translate="doctor">Dr Hind JMAHRI</span>
+                        <span data-translate="doctor"></span>
                         <i class="fas fa-stethoscope"></i>
                     </h3>
-                    <p data-translate="doctorInfo.specialty">Spécialiste en Néphrologie, Dialyse et Transportation Rénale</p>
-                    <p data-translate="doctorInfo.education">Diplomée de la faculté de Médecine et de pharmacie de Rabat</p>
-                    <p data-translate="doctorInfo.experience">Ex-Médecin interne du CHU Ibn Sina de Rabat</p>
+                    <p data-translate="doctorInfo.specialty"></p>
+                    <p data-translate="doctorInfo.education"></p>
+                    <p data-translate="doctorInfo.experience"></p>
                 </div>
             </div>
+            <img src="./images/medical-facility.jpeg" alt="Medical Facility" class="medical-facility-image">
         </div>
     </section>
 
@@ -114,9 +119,5 @@
         <p>&copy; 2024 CMRDJ - Tous droits réservés</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script src="scripts/language-switcher.js"></script>
-    <script src="scripts/map-utils.js"></script>
 </body>
 </html>

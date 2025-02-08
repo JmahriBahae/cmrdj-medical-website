@@ -28,29 +28,39 @@ function switchLanguage(lang) {
             document.querySelector(`.language-switcher button[onclick*="${lang}"]`).classList.add('active');
         })
         .catch(error => {
-            console.error('Error details:', error);
-            // More detailed error message
-            alert(`Error loading ${lang} language file. Please check console for details.`);
+            console.error('Error loading translations:', error);
         });
 }
 
 function updatePageContent(translations) {
+    console.log('Starting content update with translations:', translations);
     const elements = document.querySelectorAll('[data-translate]');
-    console.log(`Found ${elements.length} translatable elements`);
+    console.log('Found elements:', elements.length);
     
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
-        console.log(`Translating key: ${key}`);
-        if (translations[key]) {
-            element.textContent = translations[key];
+        console.log('Processing element with key:', key);
+        
+        // Handle nested keys
+        const value = key.split('.').reduce((obj, k) => {
+            console.log('Accessing key:', k, 'Current obj:', obj);
+            return obj && obj[k];
+        }, translations);
+        
+        console.log('Final value for key:', key, 'is:', value);
+        
+        if (value) {
+            element.innerHTML = value.replace(/\n/g, '<br>');
+            console.log('Updated element content:', element.innerHTML);
         } else {
-            console.warn(`Missing translation for key: ${key}`);
+            console.warn('No translation found for key:', key);
         }
     });
 }
 
 // Initialize with French when page loads
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize with French content
     switchLanguage('fr');
     // Set initial active state
     document.querySelector('.language-switcher button[onclick*="fr"]').classList.add('active');
