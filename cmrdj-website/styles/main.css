@@ -421,13 +421,22 @@ footer {
 }
 
 .doctor-info p {
-    margin-bottom: 0.8rem; /* Reduced from 1.2rem */
-    line-height: 1.4; /* Reduced from 1.8 */
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
     padding-left: 1.8rem;
     position: relative;
     white-space: pre-line;
-    font-size: 1.2rem; /* Added larger font size */
+    font-size: 1.1rem;
     color: var(--text-color);
+}
+
+/* RTL support */
+.rtl .doctor-info p {
+    padding-right: 1.8rem;
+    padding-left: 0;
+    font-size: 1.32rem; /* Increased by 20% from 1.1rem */
+    line-height: 1.4;
+    font-family: 'Arial', sans-serif;
 }
 
 .doctor-info p::before {
@@ -439,19 +448,33 @@ footer {
     top: -0.1rem; /* Adjust bullet point vertical position */
 }
 
+.doctor-info h3 span,
+.rtl .doctor-info h3 span {
+    font-size: 1.5rem; /* Reduced from 1.8rem (by ~15%) */
+    font-family: 'Arial', sans-serif;
+}
+
 /* RTL support */
 .rtl .doctor-info {
     text-align: right;
 }
 
 .rtl .doctor-info p {
-    padding-right: 1.5rem;
+    padding-right: 1.8rem;
     padding-left: 0;
+    font-size: 1.32rem; /* Increased by 20% from 1.1rem */
+    line-height: 1.4;
+    font-family: 'Arial', sans-serif;
 }
 
 .rtl .doctor-info p::before {
     right: 0;
     left: auto;
+}
+
+.rtl .doctor-info h3 span {
+    font-size: 1.8rem; /* Increased by 20% from 1.5rem */
+    font-family: 'Arial', sans-serif;
 }
 
 .rtl .hero-content {
