@@ -108,13 +108,6 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.map-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
 .appointment-note {
     color: var(--secondary-color);
     font-weight: bold;
@@ -165,19 +158,6 @@ footer {
     right: 2rem;
     left: auto;
     direction: ltr !important;
-}
-
-.map-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.rtl .map-button i {
-    margin-left: 8px;
-    margin-right: 0;
 }
 
 /* Update the treatment section styles */
@@ -336,13 +316,6 @@ footer {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-#map {
-    height: 400px;
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -525,4 +498,86 @@ nav {
     direction: ltr !important;
     unicode-bidi: embed;
     display: inline-block;
+}
+
+.direction-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.direction-link:hover {
+    opacity: 0.9;
+}
+
+.rtl .direction-link {
+    flex-direction: row-reverse;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-separator {
+    width: 1px;
+    align-self: stretch;
+    background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
+    margin: 1rem 0;
+}
+
+.email-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.email-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.email-info a:hover {
+    text-decoration: underline;
+}
+
+.phone-label {
+    color: var(--text-color);
+    font-weight: 500;
+    min-width: 70px;
+}
+
+/* RTL Support */
+.rtl .contact-row {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+    }
+    
+    .contact-separator {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+    }
+    
+    .rtl .contact-row {
+        flex-direction: column;
+    }
 }

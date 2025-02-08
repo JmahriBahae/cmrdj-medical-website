@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="scripts/language-switcher.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-    <script defer src="scripts/map-utils.js"></script>
 </head>
 <body>
     <header class="main-header">
@@ -50,11 +47,38 @@
 
     <main>
         <section class="contact-info">
-            <div class="contact-details">
-                <h3><i class="fas fa-phone"></i> <span data-translate="contact">Contact</span></h3>
-                <p>📞 +212 539914376</p>
-                <p class="appointment-note" data-translate="appointment">Appelez pour prendre rendez-vous</p>
-                <p><i class="fas fa-envelope"></i> cmrd.jmahri@gmail.com</p>
+            <div class="contact-row">
+                <div class="contact-details">
+                    <h3><i class="fas fa-phone"></i> <span data-translate="contact">Contact</span></h3>
+                    <p class="appointment-note" data-translate="appointment">Appelez pour prendre rendez-vous</p>
+                    <p class="phone-list">
+                        <span class="phone-label" data-translate="fixe">Fixe:</span>
+                        <span class="phone-number">05 39 91 43 76</span>
+                    </p>
+                    <p class="phone-list">
+                        <span class="phone-label" data-translate="mobile">Mobile:</span>
+                        <span class="phone-number">06 62 87 91 93</span>
+                    </p>
+                    <p class="email-info">
+                        <i class="fas fa-envelope"></i>
+                        <span data-translate="email">Email:</span>
+                        <a href="mailto:cmrd.jmahri@gmail.com">cmrd.jmahri@gmail.com</a>
+                    </p>
+                </div>
+                <div class="contact-separator"></div>
+                <div class="contact-container">
+                    <h3><i class="fas fa-map-marker-alt"></i> <span data-translate="address">Adresse</span></h3>
+                    <p>Centre de Dialyse Jmahri, n 248 rue noisette lotissement, Larache 92000, Morocco</p>
+                    <div class="qr-directions">
+                        <div id="qrcode" class="qr-code"></div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Centre+de+Dialyse+Jmahri,+Larache+92000,+Morocco" 
+                           target="_blank" 
+                           class="direction-link">
+                            <i class="fas fa-directions"></i>
+                            <span data-translate="openRoute">Ouvrir l'itinéraire</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="schedule-details">
@@ -70,31 +94,6 @@
                     </tr>
                 </table>
             </div>
-
-            <div class="map-container">
-                <h3><i class="fas fa-map-marker-alt"></i> <span data-translate="address">Adresse</span></h3>
-                <p>Centre de Dialyse Jmahri, n 248 rue noisette lotissement, Larache 92000, Morocco</p>
-                <div id="qrcode"></div>
-                <button onclick="openGoogleMaps()" class="map-button">
-                    <i class="fas fa-directions"></i>
-                    <span data-translate="openRoute">Ouvrir l'itinéraire</span>
-                </button>
-                <div id="map"></div>
-            </div>
-        </section>
-
-        <section class="schedule">
-            <h3><i class="fas fa-clock"></i> <span data-translate="schedule">Horaires d'ouverture</span></h3>
-            <table>
-                <tr>
-                    <td data-translate="weekdays">Lundi - Samedi</td>
-                    <td>07:00 - 19:00</td>
-                </tr>
-                <tr>
-                    <td data-translate="sunday">Dimanche</td>
-                    <td data-translate="closed">Fermé</td>
-                </tr>
-            </table>
         </section>
 
         <section class="treatment-overview">
