@@ -647,3 +647,9 @@ nav {
         flex-direction: column;
     }
 }
+
+/* Remove these sections if they exist:
+.map-container
+#map
+.map-iframe
+*/
