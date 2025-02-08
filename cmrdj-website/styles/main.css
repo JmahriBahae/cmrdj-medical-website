@@ -123,6 +123,28 @@ header {
     background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
 }
 
+/* RTL Support */
+.rtl .top-row::after {
+    left: auto; /* Remove left positioning */
+    right: 45%; /* Position from right instead */
+    transform: translateX(50%); /* Adjust transform for RTL */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-row {
+        flex-direction: column;
+    }
+    
+    .top-row::after {
+        display: none; /* Hide vertical separator on mobile */
+    }
+    
+    .rtl .top-row::after {
+        display: none; /* Hide vertical separator on mobile */
+    }
+}
+
 .contact-details,
 .schedule-details {
     flex: 1;
@@ -706,7 +728,7 @@ nav {
 
 /* RTL Support */
 .rtl .top-row::after {
-    left: 50%;
+    left: 55%; /* Changed from 50% to 55% for Arabic */
     transform: translateX(-50%);
 }
 
