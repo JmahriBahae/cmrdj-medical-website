@@ -20,6 +20,12 @@ function switchLanguage(lang) {
             } else {
                 document.body.classList.remove('rtl');
             }
+            
+            // Update active state
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.language-switcher button[onclick*="${lang}"]`).classList.add('active');
         })
         .catch(error => {
             console.error('Error details:', error);
@@ -46,4 +52,6 @@ function updatePageContent(translations) {
 // Initialize with French when page loads
 document.addEventListener('DOMContentLoaded', () => {
     switchLanguage('fr');
+    // Set initial active state
+    document.querySelector('.language-switcher button[onclick*="fr"]').classList.add('active');
 });

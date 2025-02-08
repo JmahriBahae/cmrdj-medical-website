@@ -1,10 +1,17 @@
 {
-    "title": "Centre de maladies rénales et dialyse jmahri",
+    "title": "CMRD JMAHRI",
+    "subtitle": "Centre de maladies rénales et dialyse JMAHRI",
     "doctor": "Dr Hind JMAHRI",
     "contact": "Contact",
+    "appointment": "Rendez-vous",
+    "doctorInfo": {
+        "specialty": "Spécialiste en Néphrologie, Dialyse et Transportation Rénale",
+        "education": "Diplomée de la faculté de Médecine et de pharmacie de Rabat",
+        "experience": "Ex-Médecin interne du CHU Ibn Sina de Rabat"
+    },
     "address": "Adresse",
+    "email": "Email",
     "schedule": "Horaires d'ouverture",
-    "appointment": "Appelez pour prendre rendez-vous",
     "openRoute": "Ouvrir l'itinéraire",
     "weekdays": "Lundi - Samedi",
     "sunday": "Dimanche",

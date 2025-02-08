@@ -3,43 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="title">CMRDJ - Centre de maladies rénales et dialyse jmahri</title>
+    <title data-translate="title">CMRD JMAHRI</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <nav>
             <div class="language-switcher">
                 <button onclick="switchLanguage('fr')">Français</button>
                 <button onclick="switchLanguage('ar')">العربية</button>
             </div>
         </nav>
+        <div class="header-content">
+            <h1 data-translate="title">CMRD JMAHRI</h1>
+            <p class="subtitle" data-translate="subtitle">Centre de maladies rénales et dialyse JMAHRI</p>
+            <h2 data-translate="doctor">Dr Hind JMAHRI</h2>
+            <div class="appointment-contact">
+                <i class="fas fa-calendar-check"></i>
+                <span data-translate="appointment">Rendez-vous</span>
+                <span>05 39 91 43 76</span>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1 data-translate="title">Centre de maladies rénales et dialyse jmahri</h1>
-            <h2 data-translate="doctor">Dr Hind JMAHRI</h2>
-        </section>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="doctor-info-card">
+                <div class="doctor-info">
+                    <h3>
+                        <span data-translate="doctor">Dr Hind JMAHRI</span>
+                        <i class="fas fa-stethoscope"></i>
+                    </h3>
+                    <p data-translate="doctorInfo.specialty">Spécialiste en Néphrologie, Dialyse et Transportation Rénale</p>
+                    <p data-translate="doctorInfo.education">Diplomée de la faculté de Médecine et de pharmacie de Rabat</p>
+                    <p data-translate="doctorInfo.experience">Ex-Médecin interne du CHU Ibn Sina de Rabat</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <main>
         <section class="contact-info">
-            <div class="phone">
+            <div class="contact-details">
                 <h3><i class="fas fa-phone"></i> <span data-translate="contact">Contact</span></h3>
                 <p>📞 +212 539914376</p>
                 <p class="appointment-note" data-translate="appointment">Appelez pour prendre rendez-vous</p>
+                <p><i class="fas fa-envelope"></i> cmrd.jmahri@gmail.com</p>
             </div>
 
-            <div class="address">
+            <div class="schedule-details">
+                <h3><i class="fas fa-clock"></i> <span data-translate="schedule">Horaires d'ouverture</span></h3>
+                <table>
+                    <tr>
+                        <td data-translate="weekdays">Lundi - Samedi</td>
+                        <td>07:00 - 19:00</td>
+                    </tr>
+                    <tr>
+                        <td data-translate="sunday">Dimanche</td>
+                        <td data-translate="closed">Fermé</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="map-container">
                 <h3><i class="fas fa-map-marker-alt"></i> <span data-translate="address">Adresse</span></h3>
-                <p>248 rue noisette lotissement, Larache 92000, Morocco</p>
-                <div class="map-container">
-                    <div id="qrcode"></div>
-                    <button onclick="openGoogleMaps()" class="map-button">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span data-translate="openRoute">Ouvrir l'itinéraire</span>
-                    </button>
-                </div>
+                <p>Centre de Dialyse Jmahri, n 248 rue noisette lotissement, Larache 92000, Morocco</p>
+                <div id="qrcode"></div>
+                <button onclick="openGoogleMaps()" class="map-button">
+                    <i class="fas fa-directions"></i>
+                    <span data-translate="openRoute">Ouvrir l'itinéraire</span>
+                </button>
+                <div id="map"></div>
             </div>
         </section>
 
@@ -80,6 +115,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="scripts/language-switcher.js"></script>
     <script src="scripts/map-utils.js"></script>
 </body>

@@ -4,19 +4,37 @@ function openGoogleMaps() {
     window.open(mapsUrl, '_blank');
 }
 
-// Generate QR Code when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    try {
-        const address = "248 rue noisette lotissement, Larache 92000, Morocco";
-        const qr = qrcode(0, 'M');
-        qr.addData(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`);
-        qr.make();
-        
-        const qrcodeDiv = document.getElementById('qrcode');
-        if (qrcodeDiv) {
-            qrcodeDiv.innerHTML = qr.createImgTag(4);
-        }
-    } catch (error) {
-        console.error('Error generating QR code:', error);
-    }
+function initMap() {
+    const location = { lat: 35.1931, lng: -6.1558 }; // Larache coordinates
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: location,
+    });
+
+    const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: 'CMRD JMAHRI'
+    });
+}
+
+function generateContactQR() {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:CMRD JMAHRI
+ORG:Centre de maladies rénales et dialyse jmahri
+TEL:+212539914376
+EMAIL:cmrd.jmahri@gmail.com
+ADR:n 248 rue noisette lotissement, Larache 92000, Morocco
+END:VCARD`;
+
+    const qr = qrcode(0, 'M');
+    qr.addData(vcard);
+    qr.make();
+    document.getElementById('qrcode').innerHTML = qr.createImgTag(4);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initMap();
+    generateContactQR();
 });
