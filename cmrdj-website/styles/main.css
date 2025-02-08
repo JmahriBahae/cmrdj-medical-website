@@ -410,7 +410,7 @@ footer {
 .doctor-info h3 {
     color: var(--primary-color);
     font-size: 1.8rem; /* Increased from 1.5rem */
-    margin-bottom: 1.2rem; /* Slightly increased margin */
+    margin-bottom: 0.8rem; /* Reduced from 1.2rem */
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -421,9 +421,9 @@ footer {
 }
 
 .doctor-info p {
-    margin-bottom: 1.2rem; /* Increased margin for better spacing */
-    line-height: 1.8; /* Increased line height */
-    padding-left: 1.8rem; /* Increased padding for bullet points */
+    margin-bottom: 0.8rem; /* Reduced from 1.2rem */
+    line-height: 1.4; /* Reduced from 1.8 */
+    padding-left: 1.8rem;
     position: relative;
     white-space: pre-line;
     font-size: 1.2rem; /* Added larger font size */
@@ -496,4 +496,10 @@ nav {
 .rtl .doctor-info h3 span {
     font-family: 'Arial', sans-serif;
     letter-spacing: normal;
+}
+
+.phone-number {
+    direction: ltr !important;
+    unicode-bidi: embed;
+    display: inline-block;
 }
