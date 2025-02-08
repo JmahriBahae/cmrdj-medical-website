@@ -98,7 +98,7 @@ header {
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem; /* Reduced from 2rem */
     padding: 2rem;
     background: white;
     border-radius: 8px;
@@ -110,6 +110,7 @@ header {
     justify-content: space-between;
     gap: 2rem;
     position: relative; /* Added for separator positioning */
+    margin-bottom: 0.5rem; /* Added to reduce space */
 }
 
 .top-row::after {
@@ -647,35 +648,8 @@ nav {
     justify-content: space-between;
     align-items: start;
     gap: 2rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* RTL Support */
-.rtl .location-section {
-    flex-direction: row-reverse;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .location-section {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .rtl .location-section {
-        flex-direction: column;
-    }
-}
-
-.location-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 2rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.5rem; /* Reduced from 1rem */
+    padding-top: 0.5rem; /* Reduced from 1rem */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -710,6 +684,7 @@ nav {
 @media (max-width: 768px) {
     .qr-code {
         margin: 1rem 0;
+    }
     
     .rtl .qr-code {
         margin: 1rem 0;
