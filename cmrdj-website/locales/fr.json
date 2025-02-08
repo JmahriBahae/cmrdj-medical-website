@@ -8,5 +8,12 @@
     "openRoute": "Ouvrir l'itinéraire",
     "weekdays": "Lundi - Samedi",
     "sunday": "Dimanche",
-    "closed": "Fermé"
+    "closed": "Fermé",
+    "treatment_title": "Aperçu du traitement",
+    "treatment_1": "La dialyse rénale est un traitement qui élimine les déchets et l'excès de sel, de potassium et de liquide de votre sang.",
+    "treatment_2": "Votre médecin peut vous recommander de commencer la dialyse si vos reins ont cessé de fonctionner correctement.",
+    "treatment_3": "L'unité de dialyse de notre clinique est un espace accueillant et relaxant qui dispose des dernières machines de dialyse.",
+    "treatment_4": "Nous disposons également d'une équipe de spécialistes des reins et d'infirmières en néphrologie qui vous fourniront un traitement de classe mondiale et des soins personnalisés.",
+    "treatment_5": "Notre objectif est toujours de nous assurer que vous ayez une expérience exceptionnelle avec nous et la meilleure qualité de vie.",
+    "treatment_6": "Contactez-nous pour en savoir plus sur notre service de dialyse rénale et commencer votre parcours de traitement dès aujourd'hui."
 }
