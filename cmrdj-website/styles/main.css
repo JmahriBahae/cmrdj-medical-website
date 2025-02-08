@@ -109,6 +109,18 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    position: relative; /* Added for separator positioning */
+}
+
+.top-row::after {
+    content: '';
+    position: absolute;
+    top: 15%; /* Changed from 50% to move it up */
+    left: 45%;
+    transform: translateX(-50%);
+    height: 70%; /* Half the height of container */
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
 }
 
 .contact-details,
@@ -691,3 +703,20 @@ nav {
 #map
 .map-iframe
 */
+
+/* RTL Support */
+.rtl .top-row::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-row {
+        flex-direction: column;
+    }
+    
+    .top-row::after {
+        display: none; /* Hide vertical separator on mobile */
+    }
+}
