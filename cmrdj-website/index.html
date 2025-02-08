@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">CMRDJ - Centre de maladies rénales et dialyse jmahri</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('fr')">Français</button>
+                <button onclick="switchLanguage('ar')">العربية</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 data-translate="title">Centre de maladies rénales et dialyse jmahri</h1>
+            <h2 data-translate="doctor">Dr Hind JMAHRI</h2>
+        </section>
+
+        <section class="contact-info">
+            <div class="phone">
+                <h3><i class="fas fa-phone"></i> <span data-translate="contact">Contact</span></h3>
+                <p>📞 +212 539914376</p>
+                <p class="appointment-note" data-translate="appointment">Appelez pour prendre rendez-vous</p>
+            </div>
+
+            <div class="address">
+                <h3><i class="fas fa-map-marker-alt"></i> <span data-translate="address">Adresse</span></h3>
+                <p>248 rue noisette lotissement, Larache 92000, Morocco</p>
+                <div class="map-container">
+                    <div id="qrcode"></div>
+                    <button onclick="openGoogleMaps()" class="map-button">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-translate="openRoute">Ouvrir l'itinéraire</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule">
+            <h3><i class="fas fa-clock"></i> <span data-translate="schedule">Horaires d'ouverture</span></h3>
+            <table>
+                <tr>
+                    <td data-translate="weekdays">Lundi - Samedi</td>
+                    <td>07:00 - 19:00</td>
+                </tr>
+                <tr>
+                    <td data-translate="sunday">Dimanche</td>
+                    <td data-translate="closed">Fermé</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CMRDJ - Tous droits réservés</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="scripts/language-switcher.js"></script>
+    <script src="scripts/map-utils.js"></script>
+</body>
+</html>
