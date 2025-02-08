@@ -1,5 +1,5 @@
 function openGoogleMaps() {
-    const address = "248 rue noisette lotissement, Larache 92000, Morocco";
+    const address = "Centre de Dialyse Jmahri, n 248 rue noisette lotissement, Larache 92000, Morocco";
     const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
     window.open(mapsUrl, '_blank');
 }

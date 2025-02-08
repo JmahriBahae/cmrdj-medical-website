@@ -280,18 +280,34 @@ footer {
 }
 
 .main-header {
-    background: linear-gradient(rgba(14, 165, 233, 0.95), rgba(14, 165, 233, 0.95)),
-                url('../images/header-bg.jpg') no-repeat center center;
-    background-size: cover;
+    position: relative;
+    min-height: 180px;
+    max-height: 250px;
     color: white;
-    padding: 1.5rem 2rem; /* Slightly reduced padding */
+    padding: 1rem 2rem;
     text-align: center;
+    overflow: hidden;
+    background: linear-gradient(rgba(88, 120, 134, 0.85), rgba(14, 165, 233, 0.85));
+}
+
+.main-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%; /* Adjust width of the image */
+    height: 100%;
+    background: url('../images/Header_Dialysis.webp') no-repeat left center;
+    background-size: cover;
+    z-index: 1;
 }
 
 .header-content {
+    position: relative;
     max-width: 1200px;
-    margin: -10px auto 0; /* Added negative top margin to pull content up */
-    padding-top: 0; /* Remove top padding if any */
+    margin: -5px auto 0;
+    padding-top: 0;
+    z-index: 2; /* Increased z-index to stay above the image */
 }
 
 .emergency-contact {
