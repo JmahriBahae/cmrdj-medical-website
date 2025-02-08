@@ -184,10 +184,22 @@ button:hover {
 }
 
 footer {
+    padding: 1rem 0;
     text-align: center;
-    padding: 1rem;
-    background-color: var(--primary-color);
+    background: var(--dark-blue); /* Different background color */
     color: white;
+    margin-top: 0; /* Remove top margin */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* RTL Support */
+.rtl footer {
+    direction: ltr;
 }
 
 #qrcode {
@@ -216,6 +228,7 @@ footer {
     grid-template-columns: 1.5fr 1fr; /* Adjust ratio to give more space to text */
     gap: 2rem;
     align-items: center;
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .treatment-content {
@@ -739,6 +752,10 @@ nav {
     }
     
     .top-row::after {
+        display: none; /* Hide vertical separator on mobile */
+    }
+    
+    .rtl .top-row::after {
         display: none; /* Hide vertical separator on mobile */
     }
 }
