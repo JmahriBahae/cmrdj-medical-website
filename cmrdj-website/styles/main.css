@@ -89,7 +89,7 @@ header {
 }
 
 .medical-facility-image {
-    width: 45%;
+    width: 40%; /* Decreased from 45% to accommodate wider card */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -387,9 +387,9 @@ footer {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin-left: 2rem; /* Instead of absolute positioning */
-    width: 50%;
+    max-width: 650px; /* Increased from 600px */
+    width: 55%; /* Increased from 50% */
+    margin-left: 30px; /* Added specific left margin */
     margin: 0;
 }
 
@@ -409,8 +409,8 @@ footer {
 
 .doctor-info h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Increased from 1.5rem */
+    margin-bottom: 1.2rem; /* Slightly increased margin */
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -421,11 +421,13 @@ footer {
 }
 
 .doctor-info p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    padding-left: 1.5rem;
+    margin-bottom: 1.2rem; /* Increased margin for better spacing */
+    line-height: 1.8; /* Increased line height */
+    padding-left: 1.8rem; /* Increased padding for bullet points */
     position: relative;
-    white-space: pre-line; /* Preserve line breaks from JSON */
+    white-space: pre-line;
+    font-size: 1.2rem; /* Added larger font size */
+    color: var(--text-color);
 }
 
 .doctor-info p::before {
@@ -433,6 +435,8 @@ footer {
     position: absolute;
     left: 0;
     color: var(--primary-color);
+    font-size: 1.4rem; /* Increased bullet point size */
+    top: -0.1rem; /* Adjust bullet point vertical position */
 }
 
 /* RTL support */
@@ -480,4 +484,16 @@ nav {
     font-style: italic;
     font-size: 1.4rem;
     margin: 0;
+}
+
+.rtl h1[data-translate="title"],
+.rtl h2[data-translate="doctor"],
+.rtl p[data-translate="subtitle"] {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: normal;
+}
+
+.rtl .doctor-info h3 span {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: normal;
 }
