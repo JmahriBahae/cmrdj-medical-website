@@ -1,6 +1,5 @@
 function generateQRCode() {
-    const coordinates = "35.170476190861166, -6.1425228817234965";
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${coordinates}`;
+    const mapsUrl = "https://www.google.com/maps/search/?api=1&query=n+248+rue+noisette+lotissement+Larache+92000+Maroc+Centre+de+Dialyse+Jmahri";
     
     const qrcode = new QRCode(document.getElementById("qrcode"), {
         text: mapsUrl,
@@ -8,7 +7,7 @@ function generateQRCode() {
         height: 128,
         colorDark: "#000000",
         colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.L // Changed from H to L for faster generation
+        correctLevel: QRCode.CorrectLevel.L
     });
 }
 
