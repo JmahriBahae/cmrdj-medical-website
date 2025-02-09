@@ -82,14 +82,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced from 2rem */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .medical-facility-image {
-    width: 40%; /* Decreased from 45% to accommodate wider card */
+    width: 52%; /* Increased to balance smaller card */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -416,70 +416,121 @@ footer p {
     font-size: 1.1rem;
 }
 
+/* Doctor Info Card Base Styling */
 .doctor-info-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 650px; /* Increased from 600px */
-    width: 55%; /* Increased from 50% */
-    margin-left: 30px; /* Added specific left margin */
-    margin: 0;
+    background: linear-gradient(to right, #EBF8FF, #BEE3F8);
+    position: relative;
+    overflow: hidden;
+    padding: 1.2rem; /* Reduced from 1.5rem */
+    border-radius: 10px; /* Slightly reduced from 12px */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Reduced from 55% */
 }
 
-/* Ensure proper spacing in mobile view */
-@media (max-width: 768px) {
-    .doctor-info-card {
-        margin: 20px auto; /* Center card on mobile */
-        max-width: calc(100% - 2rem); /* Full width minus margins */
-        width: 100%;
-        margin-bottom: 20px;
-    }
+/* Medical Cross Pattern Overlay */
+.doctor-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 20h10v5h5v10h-5v5H25v-5h-5V25h5v-5zm0 0' fill='%233182ce' fill-opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
 }
 
+/* Doctor Info Container */
 .doctor-info {
-    text-align: left;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.2rem; /* Reduced from 1.5rem */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Title Styling */
 .doctor-info h3 {
     color: var(--primary-color);
-    font-size: 1.8rem; /* Increased from 1.5rem */
-    margin-bottom: 0.8rem; /* Reduced from 1.2rem */
+    font-size: 1.5rem; /* Reduced from 1.8rem */
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+    padding-bottom: 0.8rem; /* Reduced from 1rem */
+    border-bottom: 2px solid rgba(49, 130, 206, 0.1);
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
 
-.doctor-info h3 i {
-    color: var(--dark-blue);
-}
-
+/* Info Paragraphs */
 .doctor-info p {
-    margin-bottom: 0.8rem;
-    line-height: 1.4;
-    padding-left: 1.8rem;
     position: relative;
-    white-space: pre-line;
-    font-size: 1.1rem;
-    color: var(--text-color);
+    padding: 0.5rem 0 0.5rem 1.8rem; /* Reduced from 0.6rem 0 0.6rem 2rem */
+    margin-bottom: 0.6rem; /* Reduced from 0.8rem */
+    font-size: 1rem; /* Reduced from 1.1rem */
+    line-height: 1.35; /* Reduced from 1.5 */
 }
 
-/* RTL support */
-.rtl .doctor-info p {
-    padding-right: 1.8rem;
-    padding-left: 0;
-    font-size: 1.32rem; /* Increased by 20% from 1.1rem */
-    line-height: 1.4;
-    font-family: 'Arial', sans-serif;
+/* Make first line bold */
+.doctor-info p:nth-of-type(1) {
+    font-weight: 600;
 }
 
+/* Icons for different sections */
 .doctor-info p::before {
-    content: "•";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--primary-color);
-    font-size: 1.4rem; /* Increased bullet point size */
-    top: -0.1rem; /* Adjust bullet point vertical position */
+    color: #3182ce;
+    font-size: 1.1rem; /* Reduced from 1.2rem */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Specialty icon */
+.doctor-info p:nth-of-type(1)::before {
+    content: "\f5a2"; /* fa-medal */
+}
+
+/* Education icons */
+.doctor-info p:nth-of-type(2)::before {
+    content: "\f19d"; /* fa-graduation-cap */
+}
+
+/* Update third education icon to hospital */
+.doctor-info p:nth-of-type(3)::before {
+    content: "\f0f8"; /* fa-hospital instead of fa-graduation-cap */
+}
+
+/* Experience icon */
+.doctor-info p:nth-of-type(4)::before {
+    content: "\f0f8"; /* fa-hospital */
+}
+
+/* RTL Support */
+.rtl .doctor-info p {
+    padding: 0.5rem 1.8rem 0.5rem 0; /* Match LTR padding */
+    line-height: 1.3; /* Slightly reduced for Arabic */
+}
+
+/* RTL Support for bold text */
+.rtl .doctor-info p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .doctor-info-card {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .doctor-info {
+        padding: 1rem;
+    }
+
+    .doctor-info h3 {
+        font-size: 1.3rem;
+    }
 }
 
 .doctor-info h3 span,
@@ -496,7 +547,7 @@ footer p {
 .rtl .doctor-info p {
     padding-right: 1.8rem;
     padding-left: 0;
-    font-size: 1.32rem; /* Increased by 20% from 1.1rem */
+    font-size: 1.2rem; /* Slightly larger for Arabic */
     line-height: 1.4;
     font-family: 'Arial', sans-serif;
 }
